@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "8d18b658-59c6-45a5-8779-51c9f72f633d",
+		"name": "nac",
+		"description": "Projeto usado em aula. CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Loja",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nomeLoja\": \"Teams\",\r\n        \"url\": \"https://www.microsoft.com/\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/loja/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"loja",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nomeLoja\": \"batata\",\r\n        \"url\": \"https://www.habdckfsasdfag\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/loja/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"loja",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2ab9ac10-e69c-443e-807c-5b24aa888098",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "58d6c99f-5a6c-47b9-a39d-2c76dfd65119",
+								"exec": [
+									"{\r",
+									" \"nomeCategoria\": \"games\"\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Location",
+								"value": "http://localhost:8080/fiap/marca/3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Teste22\",\r\n    \"sku\": \"sku-0001\",\r\n    \"descricao\": \"DescriÃ§Ã£o do Produto 1\",\r\n    \"preco\": 1.99,\r\n    \"caracteristicas\": \"CaracterÃ­sticas do produto 1\",\r\n    \"categoria\": {\r\n        \"idCategoria\": 1\r\n    },\r\n    \"marca\": {\r\n        \"idMarca\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/loja/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"loja",
+								""
+							]
+						},
+						"description": "Update\r\nEditar"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "29c76ebf-f9a5-4316-bbe5-ebb90c19ac62",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "232cee5f-a782-4bab-b983-67a99982f5f4",
+								"exec": [
+									"{\r",
+									" \"nomeCategoria\": \"games\"\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Location",
+								"type": "text",
+								"value": "http://localhost:8080/fiap/marca/3"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeCategoria\": \"teste2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/loja/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"loja",
+								"4"
+							]
+						},
+						"description": "DELETE\r\ndeletar categoria"
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2ab9ac10-e69c-443e-807c-5b24aa888098",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "58d6c99f-5a6c-47b9-a39d-2c76dfd65119",
+								"exec": [
+									"{\r",
+									" \"nomeCategoria\": \"games\"\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Location",
+								"value": "http://localhost:8080/fiap/marca/3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Teste22\",\r\n    \"sku\": \"sku-0001\",\r\n    \"descricao\": \"DescriÃ§Ã£o do Produto 1\",\r\n    \"preco\": 1.99,\r\n    \"caracteristicas\": \"CaracterÃ­sticas do produto 1\",\r\n    \"categoria\": {\r\n        \"idCategoria\": 1\r\n    },\r\n    \"marca\": {\r\n        \"idMarca\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fiap/loja/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"loja",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7afa41bd-de65-4958-ad90-fe7fe4d124ab",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "32f200a5-e385-448c-b340-13c15990e7df",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
